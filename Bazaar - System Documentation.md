@@ -9,7 +9,7 @@
 ## 1. Target Environment
 
 *   **Operating System(s) (e.g., Windows, Linux, macOS):**
-    > For client mobile applications (Buyer and Seller), the target operating systems are **Android** and **iOS**. The Admin control panel is a web application accessed internally via standard web browsers on desktop operating systems (Windows, macOS, Linux). The backend service is designed to run in a Linux environment (within Docker containers on AWS EC2).
+    > For client mobile applications (Buyer and Seller), the target operating systems are **Android** and **iOS**. The Admin control panel is a web application accessed internally via standard web browsers on desktop operating systems (Windows, macOS, Linux). The backend service is designed to run in a Linux environment.
 
 *   **Hardware Requirements (CPU, RAM, storage, GPU, etc.):**
     > Mobile applications are intended for standard smartphones, thus hardware requirements are minimal and consistent with the capabilities of modern Android and iOS devices. The web-based admin control panel has no specific hardware requirements beyond those needed to run a modern web browser. For the backend server (AWS EC2), initial requirements are modest, with the ability to scale as needed. S3 is used for image storage, reducing the storage load on the EC2 instance. A stable internet connection is necessary for all system components.
