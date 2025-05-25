@@ -124,4 +124,6 @@ Each repository contains its own detailed `README.md` file with setup and usage 
 
 [System Documentation for the entire System](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/Bazaar%20-%20System%20Documentation.md)
 
+## Component Diagram
+
 ![Component Diagram](/Documentation/Component.png)
