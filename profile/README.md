@@ -120,5 +120,8 @@ This GitHub organization includes the following main repositories that make up t
 
 Each repository contains its own detailed `README.md` file with setup and usage instructions.
 
+## System Documentation
+
+[System Documentation for the entire System](/../Bazaar%20-%20System%20Documentation.md)
 
 ![Component Diagram](/Documentation/Component.png)
