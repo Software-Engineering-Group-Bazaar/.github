@@ -170,27 +170,30 @@
     >     *   Copy `docker-compose.yml` to the server.
     >     *   Start the PostgreSQL container: `sudo docker-compose up -d`.
     >     *   Verify the database is running: `sudo docker ps`.
-    > 3.  **Backend Deployment:**
+    > 3.  **Private Keys:**
+    >     *   Configure the Firebase project to support FCM for both backend sending and mobile app receiving functionalities. Follow the tutorial included within the Firebase interface.
+    >     * Enable Google Maps Directions API and create a key. 
+    > 4.  **Backend Deployment:**
     >     *   Clone the backend repository: `git clone <repo_url> bazaar-backend`.
     >     *   Navigate to the `bazaar-backend` folder.
     >     *   Checkout the desired branch (e.g., `develop` or `main/master`).
-    >     *   Create `appsettings.Production.json` (Similar to the local appsettings.Development.json) with production connection strings (targeting Docker PostgreSQL at `localhost:5432` within EC2), JWT settings, AWS S3 settings, Firebase key path (which also needs to be securely transferred to the server), email settings, and Admin email. **Ensure permissions on this file are restrictive.**
+    >     *   Create `appsettings.Production.json` (Similar to the local appsettings.Development.json) with production connection strings (targeting Docker PostgreSQL at `localhost:5432` within EC2), JWT settings, AWS S3 settings, Firebase key path (which also needs to be securely transferred to the server), Google Maps Directions API key, email settings, and Admin email. **Ensure permissions on this file are restrictive.**
     >     *   Transfer the Firebase Admin SDK JSON key to the server at the location specified in `appsettings.Production.json`.
     >     *   Run `dotnet restore`.
     >     *   Apply ALL EF Core migrations for ALL DbContexts sequentially: `dotnet ef database update -c <DbContextName>`. Carefully monitor the output of each command.
     >     *   Publish the application: `dotnet publish --configuration Release -o ./publish`.
     >     *   Copy `appsettings.Production.json` to the `./publish` folder. (If it hasn't been copied already by the previous command)
     >     *   Configure and run the backend application as a systemd service to run in the background and start automatically.
-    > 4.  **Frontend Admin Panel Deployment (Netlify):**
+    > 5.  **Frontend Admin Panel Deployment (Netlify):**
     >     *   Connect the Admin Panel's GitHub repository to your Netlify account.
     >     *   Configure build commands (e.g., `npm run build`) and the publish directory (e.g., `dist`).
     >     *   Set environment variables on Netlify if needed (e.g., backend API URL).
     >     *   Deployment is triggered automatically on push to the appropriate branch.
-    > 5.  **Frontend Mobile Applications Deployment (EAS Build & Submit):**
+    > 6.  **Frontend Mobile Applications Deployment (EAS Build & Submit):**
     >     *   Ensure `google-services.json` and `GoogleService-Info.plist` are in the repository. (Straight forward through the Fireabse project creation tutorial)
     >     *   Configure `app.json` with the correct `package`/`bundleIdentifier` and `plugins` (especially `expo-notifications` and EAS `projectId`).
     >     *   Upload necessary credentials (FCM V1 key, APNs .p8 key) to EAS: `eas credentials`.
     >     *   Run production builds: `eas build -p android --profile production` and `eas build -p ios --profile production`.
     >     *   After successful builds, download the `.apk`/`.aab` and `.ipa` files.
     >     * (Additional)  Upload to Google Play Store and Apple App Store Connect using `eas submit -p android` and `eas submit -p ios`, or manually.
-    > 6.  **Final Testing:** Verify all functionalities on the deployed system.
+    > 7.  **Final Testing:** Verify all functionalities on the deployed system.
