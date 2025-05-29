@@ -162,6 +162,7 @@
     > 1.  **Server Preparation (AWS EC2 - e.g., Ubuntu Linux):**
     >     *   Create an EC2 instance.
     >     *   Configure Security Groups (open ports 80, 443, 22 for SSH).
+    >     *   Configure AWS S3 for storage.
     >     *   Install Docker and Docker Compose.
     >     *   Install .NET 8 SDK/Runtime.
     >     *   (Optional) Install and configure Caddy (or another reverse proxy) for HTTPS and routing.
@@ -173,12 +174,12 @@
     >     *   Clone the backend repository: `git clone <repo_url> bazaar-backend`.
     >     *   Navigate to the `bazaar-backend` folder.
     >     *   Checkout the desired branch (e.g., `develop` or `main/master`).
-    >     *   Create `appsettings.Production.json` with production connection strings (targeting Docker PostgreSQL at `localhost:5432` within EC2), JWT settings, AWS S3 settings, Firebase key path (which also needs to be securely transferred to the server), email settings, and Admin email. **Ensure permissions on this file are restrictive.**
+    >     *   Create `appsettings.Production.json` (Similar to the local appsettings.Development.json) with production connection strings (targeting Docker PostgreSQL at `localhost:5432` within EC2), JWT settings, AWS S3 settings, Firebase key path (which also needs to be securely transferred to the server), email settings, and Admin email. **Ensure permissions on this file are restrictive.**
     >     *   Transfer the Firebase Admin SDK JSON key to the server at the location specified in `appsettings.Production.json`.
     >     *   Run `dotnet restore`.
     >     *   Apply ALL EF Core migrations for ALL DbContexts sequentially: `dotnet ef database update -c <DbContextName>`. Carefully monitor the output of each command.
     >     *   Publish the application: `dotnet publish --configuration Release -o ./publish`.
-    >     *   Copy `appsettings.Production.json` to the `./publish` folder.
+    >     *   Copy `appsettings.Production.json` to the `./publish` folder. (If it hasn't been copied already by the previous command)
     >     *   Configure and run the backend application as a systemd service to run in the background and start automatically.
     > 4.  **Frontend Admin Panel Deployment (Netlify):**
     >     *   Connect the Admin Panel's GitHub repository to your Netlify account.
@@ -186,7 +187,7 @@
     >     *   Set environment variables on Netlify if needed (e.g., backend API URL).
     >     *   Deployment is triggered automatically on push to the appropriate branch.
     > 5.  **Frontend Mobile Applications Deployment (EAS Build & Submit):**
-    >     *   Ensure `google-services.json` and `GoogleService-Info.plist` are in the repository.
+    >     *   Ensure `google-services.json` and `GoogleService-Info.plist` are in the repository. (Straight forward through the Fireabse project creation tutorial)
     >     *   Configure `app.json` with the correct `package`/`bundleIdentifier` and `plugins` (especially `expo-notifications` and EAS `projectId`).
     >     *   Upload necessary credentials (FCM V1 key, APNs .p8 key) to EAS: `eas credentials`.
     >     *   Run production builds: `eas build -p android --profile production` and `eas build -p ios --profile production`.
