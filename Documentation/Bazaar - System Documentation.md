@@ -167,8 +167,8 @@
     >     *   Install .NET 8 SDK/Runtime.
     >     *   (Optional) Install and configure Caddy (or another reverse proxy) for HTTPS and routing.
     > 2.  **Database Setup:**
-    >     *   Copy `docker-compose.yml` to the server.
-    >     *   Start the PostgreSQL container: `sudo docker-compose up -d`.
+    >     *   Copy `docker-compose.yml` to the server. (It is already included alongside the backend code)
+    >     *   Start the PostgreSQL container through the terminal: `sudo docker-compose up -d`. 
     >     *   Verify the database is running: `sudo docker ps`.
     > 3.  **Private Keys:**
     >     *   Configure the Firebase project to support FCM for both backend sending and mobile app receiving functionalities. Follow the tutorial included within the Firebase interface.
