@@ -126,7 +126,9 @@ Each repository contains its own detailed `README.md` file with setup and usage 
 
 ## User Manuals
 
-* **The Shop (Seller mobile application):** [User Manual - Seller](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/User%20Manuals/Seller%20-%20User%20Manual.pdf)
+* **The Shop (Seller Mobile Application):** [User Manual - Seller](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/User%20Manuals/Seller%20-%20User%20Manual.pdf)
+
+* **Admin Control Panel (Admin Web Application):** [User Manual - Admin](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/User%20Manuals/Admin%20-%20User%20Manual.pdf)
   
 ## Component Diagram
 
