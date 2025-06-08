@@ -124,6 +124,10 @@ Each repository contains its own detailed `README.md` file with setup and usage 
 
 [System Documentation for the entire System](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/Documentation/Bazaar%20-%20System%20Documentation.md)
 
+## User Manuals
+
+* **The Shop (Seller mobile application):** [User Manual - Seller](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/User%20Manuals/Seller%20-%20User%20Manual.pdf)
+  
 ## Component Diagram
 
 ![Component Diagram](/Documentation/Component.png)
