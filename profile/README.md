@@ -124,6 +124,10 @@ Each repository contains its own detailed `README.md` file with setup and usage 
 
 [System Documentation for the entire System](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/Documentation/Bazaar%20-%20System%20Documentation.md)
 
+## SRS Document
+
+[SRS Document](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/Documentation/Bazaar%20-%20SRS%20Document.pdf)
+
 ## User Manuals
 
 * **Bazaar (Buyer Mobile Application):** [User Manual - Buyer](https://github.com/Software-Engineering-Group-Bazaar/.github/blob/main/User%20Manuals/Buyer%20-%20User%20Manual.pdf)
